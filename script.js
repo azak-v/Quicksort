@@ -30,7 +30,7 @@ function script() {
     // newArr = sort(arr);
     console.log(spanArr[0].innerText);
     spanArr.forEach((element, index) => {
-      odoo.default({ el:spanArr[index], from: spanArr[index].innerText, to: arr[index], animationDelay: 1000 });
+      odoo.default({ el:spanArr[index], from: '', to: arr[index], animationDelay: 1000 });
     })
       console.log(arr);
 
