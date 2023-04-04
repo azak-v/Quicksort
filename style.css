@@ -2,20 +2,101 @@
     margin: 0;
     padding: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://wallscloud.net/img/resize/1280/720/RM/2022-12-04-opera-gx-1-55790.jpg');
+    background-size: 110%;
+}
+
+body .allContainer{
+    padding: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(94, 12, 6, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(84, 43, 116, 0.3);
+}
+
+#title{
+    font-size: 72px;
+    color: white;
+    font-family: 'M PLUS 1 Code', sans-serif;    margin-bottom: 20px;
+}
+
+#arrayInput{    
+    height: 80px;
+    width: 400px;
+    font-size: 20px;
+    border-radius: 15px;
+    padding-left: 10px;
+    background-color: #8C1132;
+    border-style: solid;
+    border: 2px solid #550a1e;
+    border-color: rgb(75, 1, 1);
+    color: white;
+}
+
+::placeholder{color:white}
+#addToArray, #sortButton{
+    margin-top: 20px;
+    width: 200px;
+    height: 80px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: #66149c;
+    color: white;
+    border-bottom:5px solid #290144;
+}
+#addToArray:hover, #sortButton:hover{
+    cursor: pointer;
+}
+#addToArray:active, #sortButton:active{
+    transform: translateY(4px);
+}
+
+
+#sortButton{
+    font-size: 20px;
+    background-color: #d41616;
+    border-bottom:5px solid #610000;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 8px;
+}
+
 #container{
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .box{
-    width: 100px;
-    height: 100px;
-    border: 3px solid black;
+    min-width: 30px;
+    width: fit-content;
+    height: fit-content;
+    min-height: 80px;
+    border: 2px solid black;
+    margin-left: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
+    padding:23px ;
+    background-color: #ffffff;
 }
 
 .boxValue{
