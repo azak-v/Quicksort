@@ -1,11 +1,45 @@
 function script() {
   let arr = [];
+
+
+  // odoo.default({ el:'.teste', from: value, to: 'CODEVEMBER', animationDelay: 1000 });
+
+
+
+
   arrayInput = document.getElementById("arrayInput");
   inputButton = document.getElementById("addToArray");
+  sortButton = document.getElementById("sortButton");
+
+  teste = document.getElementById("teste");
+
+
   container = document.getElementById("container");
+
   inputButton.addEventListener("click", () => {
     addToArray();
   });
+
+  sortButton.addEventListener("click", () => {
+    arr = quicksort(arr); changeScreen();
+  });
+
+
+  function changeScreen(){
+    spanArr = document.querySelectorAll('span.boxValue');
+    // newArr = sort(arr);
+    console.log(spanArr[0].innerText);
+    spanArr.forEach((element, index) => {
+      odoo.default({ el:spanArr[index], from: spanArr[index].innerText, to: arr[index], animationDelay: 1000 });
+    })
+      console.log(arr);
+
+    //   console.log(element);
+    // });
+    //muda os valores na tela com for each e em seguida anima
+    //a animação deve ser do valor antigo pro valor atual
+  }
+
   function addToArray() {
     //convert text to a number value
     let value = parseInt(arrayInput.value);
@@ -13,11 +47,12 @@ function script() {
     //push value on input to array
     arr.push(value);
     
-    //create box content
-    createBox();
-
-    //add value no the content
+    //*add validation
+    //create box content //add value no content
+    if(arrayInput.value != '') createBox(value);
     clearInput();
+
+    
   }
 
   function clearInput(){
@@ -25,10 +60,13 @@ function script() {
   }
 
   function createBox(value){
-    container.innerHTML += `<div style="width: 100px; background-color:black">
-    .</div> `
+    container.innerHTML += `<div class="box">
+            <span class="boxValue">
+            `+value+`
+            </span>
+    </div> `
   }
-  //1, 2, 2, 3, 4, 5, 6, 8
+
   function quicksort(array) {
     if (array.length === 1) {
       console.log("Terminei de organizar! Concatenando com o pivot...");
@@ -58,5 +96,5 @@ function script() {
 
     return response;
   }
-  quicksort(arr);
+  
 }

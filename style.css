@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxValue{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+}
