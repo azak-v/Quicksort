@@ -1,21 +1,14 @@
 function script() {
+  //Array a ser manipulado
   let arr = [];
 
+  // Inputs
+  const arrayInput = document.getElementById("arrayInput");
+  const inputButton = document.getElementById("addToArray");
+  const sortButton = document.getElementById("sortButton");
+  const container = document.getElementById("container");
 
-  // odoo.default({ el:'.teste', from: value, to: 'CODEVEMBER', animationDelay: 1000 });
-
-
-
-
-  arrayInput = document.getElementById("arrayInput");
-  inputButton = document.getElementById("addToArray");
-  sortButton = document.getElementById("sortButton");
-
-  teste = document.getElementById("teste");
-
-
-  container = document.getElementById("container");
-
+  //Event listeners
   inputButton.addEventListener("click", () => {
     addToArray();
   });
@@ -25,40 +18,39 @@ function script() {
   });
 
 
+  //Muda a tela após o sorteio
   function changeScreen(){
     spanArr = document.querySelectorAll('span.boxValue');
-    // newArr = sort(arr);
     console.log(spanArr[0].innerText);
     spanArr.forEach((element, index) => {
       odoo.default({ el:spanArr[index], from: '', to: arr[index], animationDelay: 1000 });
     })
-      console.log(arr);
+      // console.log(arr);
 
-    //   console.log(element);
-    // });
-    //muda os valores na tela com for each e em seguida anima
-    //a animação deve ser do valor antigo pro valor atual
   }
 
+  //Adiciona o Valor do input após o sorteio
   function addToArray() {
-    //convert text to a number value
+    //Converte o texto para um valor numérico
     let value = parseInt(arrayInput.value);
 
-    //push value on input to array
+    //Push no valor para o array
     arr.push(value);
     
-    //*add validation
-    //create box content //add value no content
+    //Caso o input não esteja vazio, cria uma box;
     if(arrayInput.value != '') createBox(value);
+
     clearInput();
 
     
   }
 
+  //Limpa o input após adicionar
   function clearInput(){
     arrayInput.value = '';
   }
 
+  //Cria as caixas do array com o valor especifico dentro
   function createBox(value){
     container.innerHTML += `<div class="box">
             <span class="boxValue">
@@ -67,6 +59,7 @@ function script() {
     </div> `
   }
 
+  //Realiza o método quicksort no array, o ordenando.
   function quicksort(array) {
     if (array.length === 1) {
       console.log("Terminei de organizar! Concatenando com o pivot...");
