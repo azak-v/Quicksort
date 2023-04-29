@@ -9,6 +9,12 @@ function script() {
   const container = document.getElementById("container");
 
   //Event listeners
+  arrayInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      addToArray();
+    }
+  });
+
   inputButton.addEventListener("click", () => {
     addToArray();
   });
